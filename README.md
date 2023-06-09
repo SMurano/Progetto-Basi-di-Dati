@@ -22,9 +22,9 @@ Documento di Design della base di dati:
 -Schema Logico con descrizione di Trigger e Procedure individuate.
 
 File SQL contenenti (tutti i file .sql):
--Creazione della struttura della base di dati (tables.sql che contiene le tabelle; trigger.sql che contiene i trigger, le procedure e le views; dump.sql che contiene il dump generato da pgAdmin; all.sql che contiene tutto ciò che è direttamente copia-incollabile su postgres in modo da vedere il funzionamento del database).
+-Creazione della struttura della base di dati ().
 
--Popolazione del DB (population.sql).
+-Popolazione del DB ().
 
 -README contenente i commenti all’SQL (questo file; i commenti all'sql sono presenti sui suddetti file sql).
 
