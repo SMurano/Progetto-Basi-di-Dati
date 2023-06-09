@@ -12,6 +12,7 @@ E' possibile individuare all'interno di questa repository:
 Documentazione contenente (main.pdf):
 
 Documento di Design della base di dati:
+
 -Diagramma Class Diagram della base di dati.
 
 -Ristrutturazione Class Diagram.
