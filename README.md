@@ -28,10 +28,10 @@ Cartella TestoLatex contiene:
 - File in Latex (Capitolo 3)
 - File in Latex (Capitolo 4)
 - Cartella (Immagini) contenente le foto utilizzate all'interno della documentazione
-  - FedericoII.png
-  - Galleria Fotografica Geocalizzata.jpeg
-  - MC.png
-  - MCR.png
+  - Logo Unina (FedericoII.png)
+  - Diagramma Contettuale Ristrutturato in ER (Galleria Fotografica Geocalizzata.jpeg)
+  - Diagramma Concettuale in UML (MC.png)
+  - Diagramma Concettuale Ristrutturato in UML (MCR.png)
 
 Cartella DataBase SQL contenente (tutti i file .sql):
 - SQL completo (DataBase.sql)
