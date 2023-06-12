@@ -42,6 +42,6 @@ Cartella DataBase SQL contenente (tutti i file .sql):
 
 - Popolazione del DB ().
 
--README contenente i commenti all’SQL (questo file; i commenti all'sql sono presenti sui suddetti file sql).
+-README contenente i commenti all’SQL (questo file).
 
 Stefano Murano & Cristan Monte.
