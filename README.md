@@ -34,13 +34,13 @@ Cartella TestoLatex contiene:
   - MCR.png
 
 Cartella DataBase SQL contenente (tutti i file .sql):
--SQL completo (DataBase.sql)
--Domini utilizzati all'interno del Data Base (Domini.sql)
--Procedure utilizzate all'interno del Data Base (Procedure.sql)
--Creazione delle Tabelle del Data Base (Schema Fisico.sql)
+- SQL completo (DataBase.sql)
+- Domini utilizzati all'interno del Data Base (Domini.sql)
+- Procedure utilizzate all'interno del Data Base (Procedure.sql)
+- Creazione delle Tabelle del Data Base (Schema Fisico.sql)
 
 
--Popolazione del DB ().
+- Popolazione del DB ().
 
 -README contenente i commenti all’SQL (questo file; i commenti all'sql sono presenti sui suddetti file sql).
 
