@@ -21,8 +21,24 @@ Documento di Design della base di dati:
 
 -Schema Logico con descrizione di Trigger e Procedure individuate.
 
-File SQL contenenti (tutti i file .sql):
--Creazione della struttura della base di dati ().
+Cartella TestoLatex contiene:
+- File in Latex (main)
+- File in Latex (Capitolo 1)
+- File in Latex (Capitolo 2)
+- File in Latex (Capitolo 3)
+- File in Latex (Capitolo 4)
+- Cartella (Immagini) contenente le foto utilizzate all'interno della documentazione
+  - FedericoII.png
+  - Galleria Fotografica Geocalizzata.jpeg
+  - MC.png
+  - MCR.png
+
+Cartella DataBase SQL contenente (tutti i file .sql):
+-SQL completo (DataBase.sql)
+-Domini utilizzati all'interno del Data Base (Domini.sql)
+-Procedure utilizzate all'interno del Data Base (Procedure.sql)
+- (Schema Fisico.sql)
+
 
 -Popolazione del DB ().
 
