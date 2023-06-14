@@ -1,4 +1,4 @@
-CREATE SCHEMA galleriafotograficacondivisa;
+CREATE SCHEMA galleriafotograficacondivisa AUTHORIZATION postgres
 
 CREATE DOMAIN galleriafotograficacondivisa.NomeAlfaNumerico AS VARCHAR(30)
 	CHECK(VALUE ~ '^[a-zA-Z0-9_#/. ]*$');
