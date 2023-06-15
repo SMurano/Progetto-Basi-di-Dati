@@ -21,11 +21,11 @@ Documento di Design della base di dati:
 -Schema Logico con descrizione di Trigger e Procedure individuate.
 
 Cartella TestoLatex contiene:
-- File in Latex (main)
-- File in Latex (Capitolo 1)
-- File in Latex (Capitolo 2)
-- File in Latex (Capitolo 3)
-- File in Latex (Capitolo 4)
+- File in Latex (main.tex)
+- File in Latex (Capitolo 1.tex)
+- File in Latex (Capitolo 2.tex)
+- File in Latex (Capitolo 3.tex)
+- File in Latex (Capitolo 4.tex)
 - Cartella (Immagini) contenente le foto utilizzate all'interno della documentazione
   - Logo Unina (FedericoII.png)
   - Diagramma Contettuale Ristrutturato in ER (Galleria Fotografica Geocalizzata.jpeg)
