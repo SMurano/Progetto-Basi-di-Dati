@@ -11,15 +11,15 @@ E' possibile individuare all'interno di questa repository:
 
 Documentazione contenente (main.pdf):
 
-Documento di Design della base di dati:
+- Documento di Design della base di dati:
 
--Diagramma Class Diagram della base di dati.
+  - Diagramma Class Diagram della base di dati.
 
--Ristrutturazione Class Diagram.
+  - Ristrutturazione Class Diagram.
 
--Dizionario delle Classi, delle Associazioni e dei Vincoli.
+  - Dizionario delle Classi, delle Associazioni e dei Vincoli.
 
--Schema Logico con descrizione di Trigger e Procedure individuate.
+  - Schema Logico con descrizione di Trigger e Procedure individuate.
 
 Cartella TestoLatex contenetente (tutti i file .tex):
 - File in Latex (main.tex)
