@@ -20,7 +20,7 @@ Documento di Design della base di dati:
 
 -Schema Logico con descrizione di Trigger e Procedure individuate.
 
-Cartella TestoLatex contiene:
+Cartella TestoLatex contenetente (tutti i file .tex):
 - File in Latex (main.tex)
 - File in Latex (Capitolo 1.tex)
 - File in Latex (Capitolo 2.tex)
