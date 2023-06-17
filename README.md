@@ -37,7 +37,7 @@ Cartella DataBase contenente (tutti i file .sql):
 - Domini utilizzati all'interno del Data Base (Domini.sql)
 - Procedure utilizzate all'interno del Data Base (Procedure.sql)
 - Creazione delle Tabelle del Data Base (Schema Fisico.sql)
-- Popolamento del DB ().
+- Popolamento del DB (popolamento.sql).
 
 -README contenente i commenti all’SQL (questo file).
 
