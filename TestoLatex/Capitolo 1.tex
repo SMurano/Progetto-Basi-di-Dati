@@ -1,0 +1,58 @@
+\chapter{Analisi del Progetto e requisiti individuati}
+\section{Obiettivi}
+L’obiettivo del progetto descritto in tale documento è di realizzare un sistema informativo per la gestione di collezioni fotografiche geolocalizzate condivise.
+\section{Requisisti sui dati}
+Il sistema dovrà contenere informazioni relative:
+\begin{itemize}
+    \item Gli utenti del sistema
+        \begin{itemize}
+            \item Le credenziali di accesso.
+             \item Informazioni Anagrafiche dell’utente
+                \begin{itemize}
+                    \item Nome dell’utente
+                    \item Cognome dell’utente
+                \end{itemize}
+        \end{itemize}
+    \item Le fotografie scattate dagli utenti del sistema
+        \begin{itemize}
+            \item L’utente Autore della fotografia
+            \item la tipologia di dispositivo di scatto
+            \item Il luogo in cui avviene lo scatto
+        \end{itemize}
+    \item I luoghi in cui avvengono scatti
+        \begin{itemize}
+            \item Coordinate geografiche del luogo
+            \item Eventuale nome del luogo
+        \end{itemize}
+    \item I soggetti immortalati nelle fotografie
+        \begin{itemize}
+            \item Tipologia di soggetto immortalato
+        \end{itemize}
+\end{itemize}
+
+\section{Requisiti funzionali}
+Ogni utente avrà accesso ad una sua personale schermata Home in cui potrà:
+\begin{itemize}
+    \item Visualizzare la propria galleria personale
+        \begin{itemize}
+            \item Aggiungere la foto alla propria galleria personale.
+            \item Eliminare foto dalla propria galleria personale.
+            \item Filtrare le foto della propria galleria personale per luogo di scatto.
+            \item Visualizzare una classifica dei Top 3 luoghi più immortalati dalle foto della galleria.
+        \end{itemize}
+    \item Partecipare a gallerie condivise con gli altri utenti
+        \begin{itemize}
+            \item Condividere fotografie personali con altri utenti, attraverso la galleria che hanno in comune.
+            \item Rendere private le fotografie personali condivise con gli altri utenti, in
+            modo tale da oscurare a tutti i membri della galleria la foto, che una volta resa privata, tornerà ad essere a disposizione per l’utente che ha scattato la foto nella sua galleria personale, ma non sarà presente in galleria condivisa.
+            \item Eliminare fotografie dalla propria vista della galleria condivisa, in modo tale che la foto non sia più visibile all’utente che ha eliminato la foto, ma sia visibile a tutti gli altri membri che fanno parte della galleria condivisa.
+            \item Filtrare le foto per soggetto immortalato della propria vista della galleria condivisa.
+            \item Visualizzare una classifica dei Top 3 luoghi più immortalati delle foto della galleria.
+        \end{itemize}
+\end{itemize}
+
+\section{Requisiti Aggiuntivi}
+\begin{itemize}
+    \item Utente: In relazione all’entità utente, nei suoi attributi è presente il Nome, il cognome e password di accesso alla propria area privata.
+    \item FOTO: In relazione all’entità foto, nei suoi attributi è presente la data di scatto della foto, la larghezza e la lunghezza della foto.
+\end{itemize}

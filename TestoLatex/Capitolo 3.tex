@@ -1,0 +1,189 @@
+\chapter{Dizionari}
+\section{Introduzione}
+In questa sezione verranno descritte le entità, le associazioni ed i vincoli utilizzati dal sistema tramite appositi dizionari.  
+\begingroup
+        
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{xltabular}{\textwidth}{l X X}
+        \caption{Dizionario delle classi.} \label{tab:classi} \\
+
+        \hline \multicolumn{1}{|l}{\textbf{Classe}} & \multicolumn{1}{X}{\textbf{Descrizione}} & \multicolumn{1}{X|}{\textbf{Attributi}} \\ \hline 
+        \endfirsthead
+
+        \multicolumn{3}{c}%
+        {\tablename\ \thetable{} Dizionario delle classi} \\
+        \hline \multicolumn{1}{|l}{\textbf{Classe}} & \multicolumn{1}{X}{\textbf{Descrizione}} & \multicolumn{1}{X|}{\textbf{Attributi}} \\ \hline 
+        \endhead
+
+        \multicolumn{3}{r}{Continua nella pagina successiva} \\ 
+        \hline
+        \endfoot
+
+        \hline
+        \endlastfoot
+
+        \textbf{Utente} & Entità rappresentante gli individui fruitori del servizio di condivisione di fotografie & \textbf{Nickname} (String): Identificativo univoco dell'utente.
+        \newline\textbf{Password} (String): Password di accesso all'area privata dell'utente.
+        \newline\textbf{Nome} (String): Nome reale dell'utente.
+        \newline\textbf{Cognome} (String): Cognome reale dell'utente.
+        \newline\textbf{CodGP} (int): Identificativo univoco della galleria personale dell'utente.\\
+        \hline
+
+        \textbf{Galleria Peronale} & Entità rappresentante le gallerie personali degli utenti &     \textbf{CodGP} (int): Identificativo univoco della galleria personale.
+        \newline\textbf{NomeGP} (String): Nome assegnato alla galleria personale dal sistema. \\
+        \hline
+
+        \textbf{Galleria Condivisa} & Entità rappresentante le gallerie condivise da più utenti & \textbf{CodGC} (int): identificativo univoco della galleria condivisa.
+        \newline\textbf{NomeGC} (String): Tipo di Nome assegnato alla galleria condivisa dal sistema.\\
+        \hline
+
+        \textbf{Luogo} & Entità rappresentante i luoghi di scatto delle fotografie e i luoghi soggetti delle fotografie & \textbf{NomeLuogo} (String): Identificativo univoco del luogo. 
+        \newline\textbf{Latitudine} (Float): Latitudine geografica del luogo. 
+        \newline\textbf{Longitudine} (float): Longitudine geografica del luogo. \\
+        \hline
+
+        \textbf{Soggetto} & Entità rappresentante i soggetti delle fotografie scattate. & \textbf{CodSoggetto} (String): Identificativo univoco del soggetto.
+        \newline\textbf{TipoSoggetto} (String): Tipo associato al soggetto. \\
+
+    \end{xltabular}
+\endgroup
+
+\begingroup
+        
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{xltabular}{\textwidth}{l X X}
+        \caption{Dizionario delle classi.} \label{tab:classi} \\
+
+        \hline \multicolumn{1}{|l}{\textbf{Classe}} & \multicolumn{1}{X}{\textbf{Descrizione}} & \multicolumn{1}{X|}{\textbf{Attributi}} \\ \hline 
+        \endfirsthead
+
+        \multicolumn{3}{c}%
+        {\tablename\ \thetable{} Dizionario delle classi} \\
+        \hline \multicolumn{1}{|l}{\textbf{Classe}} & \multicolumn{1}{X}{\textbf{Descrizione}} & \multicolumn{1}{X|}{\textbf{Attributi}} \\ \hline 
+        \endhead
+
+        \multicolumn{3}{r}{Continua nella pagina successiva} \\ 
+        \hline
+        \endfoot
+
+        \hline
+        \endlastfoot
+
+         \textbf{Foto} & Entità rappresentante le fotografie scattate dagli utenti. &  \textbf{CodFoto} (int): identificativo univoco della fotografia.
+        \newline\textbf{NomeFoto} (String): Nome assegnato alla fotografia dal suo autore.
+        \newline\textbf{Dispositivo} (String): Dispositivo di scatto della fotografia.
+        \newline\textbf{TipoFoto} (Boolean): Grado di visibilità della fotografia che può essere pubblica o privata.
+        \newline\textbf{DimLarghezza} (int): Dimensione orizzontale della fotografia. 
+        \newline\textbf{DimAltezza} (int): Dimensione verticale della fotografia.
+        \newline\textbf{DataScatto} (Date): Data di scatto della fotografia. \\
+
+
+
+
+
+
+   \end{xltabular}
+\endgroup
+\section{Dizionario delle associazioni}
+
+\begingroup
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{2.0}
+    \begin{xltabular}{\textwidth}{l X X}
+        \caption{Dizionario delle associazioni.} \label{tab:associazioni} \\
+        
+        \hline \multicolumn{1}{|l}{\textbf{Nome}} & \multicolumn{1}{X}{\textbf{Descrizione}} & \multicolumn{1}{X|}{\textbf{Classi coinvolte}} \\ \hline 
+        \endfirsthead
+        
+        \multicolumn{3}{c}%
+        {\tablename\ \thetable{} Dizionario delle associazioni} \\
+        \hline \multicolumn{1}{|l}{\textbf{Nome}} & \multicolumn{1}{X}{\textbf{Descrizione}} & \multicolumn{1}{X|}{\textbf{Classi coinvolte}} \\ \hline 
+        \endhead
+        
+        \multicolumn{3}{r}{{Continua nella pagina successiva}} \\ 
+        \hline
+        \endfoot
+        
+        \hline
+        \endlastfoot
+
+        \textbf{Rappresentazione} & Esprime la relazione tra Luogo e Soggetto.Un Luogo, oltre ad essere il posto in cui è stata scattata la foto può anche essere il soggetto di una foto. & \textbf{Luogo [0...1]}, indica il luogo associato ad un soggetto in una foto. 
+        \newline\textbf{Soggetto [0...1]}, indica il soggetto associato ad un luogo in una foto. \\
+        \hline
+        \textbf{Afferenza} & Esprime la relazione tra una foto e i suoi soggetti. & \textbf{Foto [1...*]}, indica la/le foto a cui partecipa/partecipano uno o più soggetti. 
+        \newline\textbf{Soggetto [1...*]}, indica il/i soggetto/i che partecipa/partecipano ad una o più foto. \\
+        \hline
+        \textbf{Ritrae} & Esprime la relazione tra Utente e Soggetto. Un utente, oltre ad essere un fruitore del servizio può anche essere un soggetto della foto. & \textbf{Utente [0...1]}, indica l'utente associato ad un soggetto in una foto. 
+        \newline\textbf{Soggetto[0...1]}, indica il soggetto associato ad un utente. \\
+        \hline
+        \textbf{Partecipazione} & Esprime la relazione tra Utente e Galleria Condivisa. & \textbf{Utente [2...*]}, indica gli utenti che partecipano ad una o più gallerie condivise. 
+        \newline\textbf{Galleria Condivisa [0...*]}, indica la/le galleria/e a cui partecipa/partecipano 2 o più utenti.\\
+        \hline
+        \textbf{Condivisione} & Esprime la relazione tra Foto e Galleria Condivisa. & \textbf{Foto [0...*]}, indica la/le foto condivisa/e dagli utenti in una o più gallerie condivise. 
+        \newline\textbf{Galleria Condivisa [0...*]}, indica la/le galleria/e in cui vengono condivise le foto dagli utenti. \\
+        \hline
+        \textbf{Contenimento} & Esprime la relazione tra Foto e Galleria Personale. & \textbf{Foto [0...*]}, indica la/le foto contenuta/e in una galleria personale. 
+        \newline\textbf{Galleria Personale [0...1]}, indica la galleria in cui è/sono contenuta/e la/le foto personale/i di un utente.\\
+        
+ \end{xltabular}
+\endgroup
+\newpage
+\section{Dizionario dei vincoli}
+
+\begingroup
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{2.0}
+    \begin{xltabular}{\textwidth}{l X}
+        \caption{Dizionario dei vincoli.} \label{tab:vincoli} \\
+        
+        \hline \multicolumn{1}{|l}{\textbf{Nome Vincolo}} & \multicolumn{1}{X|}{\textbf{Descrizione}} \\ \hline 
+        \endfirsthead
+        
+        \multicolumn{2}{c}%
+        {\tablename\ \thetable{} Dizionario dei vincoli} \\
+        \hline \multicolumn{1}{|l}{\textbf{Nome Vincolo}} & \multicolumn{1}{X|}{\textbf{Descrizione}} \\ \hline 
+        \endhead
+        
+        \multicolumn{2}{r}{{Continua nella pagina successiva}} \\ 
+        \hline
+        \endfoot
+        
+        \hline
+        \endlastfoot
+
+         \textbf{VisibilitaFoto} & Dominio che ha l'utilità di rendere l'attributo TipoFoto boloeano e può essere (pubblico o privato), questo serve a determinare se una foto resta nella galleria privata dell'utente o può essere condivisa. \\
+
+        \textbf{NomeCognomeUtente} & Dominio che ha l'utilità di limitare il tipo di caratteri utilizzabili per descrivere il nome e cognome dell'untente (i caratteri consentiti sono: caratteri alfabetici e spazio). \\
+
+        \textbf{NomeAlfanumerico} & Dominio che ha l'utilità di limitare il tipo di caratteri utilizzabili per descrivere il nickname, password, nomeluogo, nomesoggetto e nomefoto dell'untente (i caratteri consentiti sono: i caratteri alfanumerici, lo spazio, trattino basso e cancelletto). \\
+
+        \textbf{CategoriaSoggetto} & Dominio che ha l'utilità di limitare il range di valori di tiposoggetto ad un insieme di stringhe (luogo, utente, selfie, foto di gruppo, fiera, altro). \\
+
+        \textbf{CoordinateLuogo} & Rappresenta un vincolo di unicità delle coordinate (latitudine,longitudine) dell'entità luogo. \\
+
+        \textbf{CreazioneGalleriaPersonale} & Vincolo che ha il compito di assegnare ad ogni utente la sua galleria personale. \\
+
+        \textbf{Eliminafoto} & Vincolo che ha il compito di eliminare una foto se non è contenuta in nessuna galleria (sia privata, sia pubblica).\\
+
+        \textbf{RinominaGalleriaCondivisa} & Vincolo che ha il compito di aggiungere al nome della galleria condivisa il rispettivo codice. \\
+
+        \textbf{EliminaLuogo} & Vincolo che ha il compito di eliminare un luogo dall'entità luogo se non è più collegato a nessuna foto(nè come luogo di scatto nè come soggetto). \\
+
+        \textbf{EliminaSoggetto} & Vincolo che ha il compito di eliminare un soggetto dall'entità sogetto, se non è più collegato a nessuna foto. \\
+\hline
+        \textbf{EliminaSoggettoLibero} & Vincolo che ha il compito di mantenere l'integrità della tabella Soggetto. \\
+
+        \textbf{EliminaLuogoLibero} & Vincolo che ha il compito di mantenere l'integrità della tabella Luogo. \\
+
+        \textbf{EliminaFotoLibera} & Vincolo che ha il compito di mantenere l'integrità della tabella Foto. \\
+
+        \textbf{EliminaGalleriaVuota} & Vincolo che ha il compito di mantenere l'integrità della tabella Galleria Condivisa. \\
+
+        \textbf{SoggettoUnico} & Vincolo che ha il compito di garantire che non vengano assegnati più soggetti allo stesso utente. \\
+
+        \textbf{SoggettoUnico2} & Vincolo che ha il compito di garantire che non vengano assegnati più soggetti allo stesso luogo. \\
+
+ \end{xltabular}
+\endgroup

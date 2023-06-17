@@ -1,0 +1,138 @@
+\chapter{Modello Logico}
+
+FOTO(\underline{CodFoto},Dispositivo,DimAltezza,DimLarghezza,\newline\uparrow{NomeLuogo},NomeFoto,TipoFoto, \uparrow{NFotografo})
+\newline
+FOTO.Nfotografo\leftarrow{UTENTE.Nickname}
+\newline
+FOTO.NomeLuogo\leftarrow{LUOGO.NomeLuogo}
+\newline
+\newline
+LUOGO(\underline{NomeLuogo},Latitudine, Longitudine)
+\newline
+\newline
+SOGGETTO(\underline{CodSoggetto}, Tipo, \uparrow{NomeSoggetto},\uparrow{NickSoggetto})
+\newline
+SOGGETTO.NomeSoggetto\leftarrow{LUOGO.NomeLuogo}
+\newline
+SOGGETTO.NickSoggetto\leftarrow{UTENTE.Nickname}
+\newline
+\newline
+AFFERENZA(\underline{CodFoto, CodSoggetto})
+\newline
+AFFERENZA.CodFoto\leftarrow{FOTO.CodFoto}
+\newline
+AFFERENZA.CodSoggetto\leftarrow{SOGGETTO.CodSoggetto}
+\newline
+\newline
+UTENTE(Nome, Cognome,\underline{Nickname},\uparrow{CodGP})
+\newline
+UTENTE.CodGP\leftarrow{GALLERIA PERSONALE.CodGP}
+\newline
+\newline
+GALLERIA PERSONALE(\underline{CodGP}, NomeGP)
+\newline
+\newline
+GALLERIA CONDIVISA(\underline{CodGC}, NomeGC)
+\newline
+\newline
+PARTECIPAZIONE(\underline{Nickname,CodGC})
+\newline
+PARTECIPAZIONE.Nickname\leftarrow{UTENTE.Nickname}
+\newline
+PARTECIPAZIONE.CodGC\leftarrow{GALLERIA CONDIVISA.CodGC}
+\newline
+\newline
+CONDIVISIONE(\underline{CodFoto,CodGC})
+\newline
+CONDIVISIONE.CodFoto\leftarrow{FOTO.CodFoto}
+\newline
+CONDIVISIONE.CodGC\leftarrow{GALLERIA CONDIVISA.CodGC}
+\newline
+\newline
+CONTENIMENTO(\underline{CodFoto, CodGP})
+\newline
+CONTENIMENTO.CodFoto\leftarrow{FOTO.CodFoto}
+\newline
+CONTENIMENTO.codGP\leftarrow{GalleriaPersonale.CodGP}
+\newline
+
+\section{Trigger e Procedure}
+Nella seguente sezione vengono riportati tutti i Trigger e le procedure che sono utilizzate nel Data Base relazionale, riportate con il loro nome e la descrizione delle loro operazioni ed utilità.
+\newline
+\newline
+\textbf{CreazioneGalleriaPersonale}: Trigger Function che associa ad ogni nuovo utente, una galleria personale con il nome di "Galleria di Nickname", dove Nickname è il Nickname dell'utente. Utile per avere un uniformità del nome delle gallerie personali.
+\newline
+\newline
+\textbf{RinominaGalleriaCondivisa}:Trigger Function che concatena al nome della galleria condivisa, il corrispettivo codice preceduto dal carattere "Cancelletto".
+\newline
+\newline
+\textbf{CreaElencoUtenti}:Trigger Function che riempie il campo
+Elencoutenti della tabella Condivisione. Permette di
+condividere una foto in una galleria senza fornirne l’elenco di
+partecipanti.
+\newline
+\newline
+\textbf{EliminaUtenteDaElenco}:Procedura che permette ad un
+membro di una galleria condivisa di eliminare una foto per sè
+lasciandola visibile per gli altri utenti.
+\newline
+\newline
+\newline
+\textbf{FiltraFotoPerLuogo}:Funzione che permette di visualizzare tutte
+le foto scattate nello stesso luogo.
+\newline
+\newline
+\textbf{FiltraFotoPerSoggetto}:Funzione che permette di visualizzare
+tutte le foto che condividono lo stesso soggetto.
+\newline
+\newline
+\textbf{Top3LuoghiPiuImmortalati}:Trigger Function che mantiene
+aggiornata la View contenente i 3 luoghi più immortalati in
+tutto il database.
+\newline
+\newline
+\textbf{PrivatizzaFoto}:Trigger Function che rimuove una foto resa
+privata da tutte le gallerie in cui è condivisa.
+\newline
+\newline
+\textbf{EliminaFotoPrivataGC}:Trigger Function di controllo. Garantisce
+che non ci siano foto private in gallerie condivise.
+\newline
+\newline
+\newline
+\textbf{EliminaFoto}:Trigger Function che rimuove una foto dal
+database se non presente in nessuna galleria, sia personale che
+condivisa.
+\newline
+\newline
+\textbf{EliminaLuogo}:Trigger Function che rimuove un luogo dal
+database se non associato a nessuna fotografia.
+\newline
+\newline
+\textbf{EliminaSoggetto}:Trigger Function che rimuove un soggetto dal
+database se non associato a nessuna fotografia.
+\newline
+L'utilizzo di tali funzioni (EliminaFoto, EliminaLuogo, ElimanaSoggetto), vengono chiamate ad ogni cancellazione di foto nel database e controllano che i dati relativi alla foto cancellata vengano
+correttamente gestiti.
+\newline
+\newline
+\textbf{EliminaFotoLibera}: Trigger Function di controllo. Garantisce che nel database non esistano foto che non sono contenute in alcuna galleria (sia privata e sia condivisa), o che presentino dimensioni errate (una dimensione null ed un'altra not null).
+\newline
+\newline
+\textbf{EliminaSoggettoLibero}:Trigger Function di controllo.
+Garantisce che nel database non esistano soggetti che non
+afferiscono ad alcuna foto, o che abbiano dati incongruenti (ES. tipo=Utente, NickSoggetto=null).
+\newline
+\newline
+\textbf{EliminaLuogoLibero}: Trigger Function di controllo. Garantisce
+che nel database non esistano luoghi che non localizzano o
+sono soggetti di alcuna foto o abbiano coordinate errata (una coordinata null ed un'altra not null).
+\newline
+\newline
+\textbf{EliminaGalleriaVuota}:Trigger Function di controllo. Garantisce
+che non ci siano gallerie condivise con meno di due partecipanti.
+\newline
+Le funzioni (EliminaFotoLibera, EliminaSoggettoLibero,
+EliminaLuogoLibero, EliminaGalleriaVuota) vengono chiamate
+periodicamente e controllano che tutte le foto, soggetti e
+luoghi siano consistenti.
